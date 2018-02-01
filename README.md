@@ -1,2 +1,2 @@
-# freetime
-Little script to free your hand
+# ubuntu_deploy
+sh softwares.sh
