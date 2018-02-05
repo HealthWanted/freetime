@@ -1,8 +1,11 @@
 # Update & upgrade
-sudo apt-get update -y && apt-get upgrade -y
+sudo apt-get update -y && sudo apt-get upgrade -y
 
 # Git
 sudo apt install git -y
+
+# Vim
+sudo apt install vim -y
 
 # Browser: Chrome
 sudo dpkg -i google-chrome-stable_current_amd64.deb
@@ -26,14 +29,17 @@ sudo -u postgres -H -- psql -c "CREATE DATABASE ubuntu OWNER ubuntu;"
 sudo -u postgres -H -- psql -c "GRANT ALL PRIVILEGES ON DATABASE ubuntu TO ubuntu;"
 
 # Python: virtualenv
+sudo apt-get install python-dev python-pip libxml2-dev libxslt1-dev zlib1g-dev libffi-dev libssl-dev -y
+sudo apt-get install python3 python3-dev -y
 sudo apt install python-pip -y
 sudo pip install --upgrade pip
 sudo pip install virtualenv
 
+
 # Sublime
-sudo wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | apt-key add -
+wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
 sudo apt-get install apt-transport-https -y
-sudo echo "deb https://download.sublimetext.com/ apt/stable/" | tee /etc/apt/sources.list.d/sublime-text.list
+echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
 sudo apt-get update -y
 sudo apt-get install sublime-text -y
 
